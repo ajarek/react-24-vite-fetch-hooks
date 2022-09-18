@@ -1,5 +1,6 @@
 import React from 'react'
-import { List } from '../List/List/'
+import { Link } from '../Link/Link/'
+import { WrapperLayout } from '../WrapperLayout/WrapperLayout/'
 import classes from './styles.module.css'
 
 export const Navbar = (props) => {
@@ -17,8 +18,18 @@ export const Navbar = (props) => {
         className={classes.title}
       >The Political Blog
       </h2>
-      <List />
-
+      <WrapperLayout>
+      <Link
+      link={'#'}
+      >
+      Home
+      </Link>
+      <Link
+      link={'#'}
+      >
+      New Blog
+      </Link>
+      </WrapperLayout>
 
     </div>
   )

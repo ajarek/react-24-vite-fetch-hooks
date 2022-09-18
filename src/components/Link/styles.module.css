@@ -1,19 +1,18 @@
 .root {
     list-style: none;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 200px;
-    
+    justify-content: center;
+    align-items: center;  
 }
-.li{
+.a{
     font-size: 1.2rem;
-    cursor: pointer;
+    text-decoration: none;
     letter-spacing: 1px;
     padding: 0.5rem;
     transition: 0.3s ease-in-out;
+    margin-right: 1rem;
 }
-.li:hover{
+.a:hover{
     box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
    
 }
