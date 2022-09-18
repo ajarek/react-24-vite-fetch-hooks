@@ -14,10 +14,10 @@ export const Navbar = (props) => {
       className={`${classes.root}${className ? ` ${className}` : ''}`}
       {...otherProps}
     >
-      <h2
+      <h1
         className={classes.title}
       >The Political Blog
-      </h2>
+      </h1>
       <WrapperLayout>
       <Link
       link={'#'}
