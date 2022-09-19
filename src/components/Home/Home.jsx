@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from 'react'
 import { ListBlog } from '../../components/ListBlog/ListBlog'
 import { WrapperLayout } from '../../components/WrapperLayout/WrapperLayout'
-import { FetchData } from '../../components/FetchData/FetchData'
+import { useFetch } from '../../components/useFetch/useFetch'
 import { FullPageLayout } from '../../components/FullPageLayout/FullPageLayout'
 import { Loading } from '../../components/Loading/Loading'
 import classes from './styles.module.css'
@@ -11,39 +11,31 @@ export const Home = (props) => {
     className,
     ...otherProps
   } = props
-  const [blogs, setBlogs] = useState(null);
-  const [pending, setPending] = useState(true);
+  
+// npx json-server --watch src/assets/data/data.json --port 8000
 
-  useEffect(() => {
-    // npx json-server --watch src/assets/data/data.json --port 8000
-    const url = 'http://localhost:8000/blogs'
-    setTimeout(() => {
-      FetchData(url)
-      .then((data) => setBlogs(data))
-      .catch((err) => {
-        console.error('Error:', err)
-      })
-      .finally(() => setPending(false))
-    }, "2000")
-  }, []);
+ 
+const{data:blogs, pending, error}=useFetch("http://localhost:8000/blogs")
+  
+
+ 
 
   return (
     <div
       className={`${classes.root}${className ? ` ${className}` : ''}`}
       {...otherProps}
     >
-
+{error? <div>{error}</div>:null}
       {pending ?
         <FullPageLayout>
           <Loading />
         </FullPageLayout>
-        : null} 
-        <ListBlog
-          blogs={blogs}
-        />
-      
+        : null}
+       { blogs &&<ListBlog  blogs={blogs}
+      />}
+
     </div>
   )
- 
+
 }
 export default Home
