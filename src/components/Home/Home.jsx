@@ -3,6 +3,7 @@ import { ListBlog } from "../../components/ListBlog/ListBlog"
 import { useFetch } from "../../components/useFetch/useFetch"
 import { FullPageLayout } from "../../components/FullPageLayout/FullPageLayout"
 import { Loading } from "../../components/Loading/Loading"
+import { ErrorMessage } from "../../components/ErrorMessage/ErrorMessage"
 import classes from "./styles.module.css"
 
 export const Home = (props) => {
@@ -21,7 +22,7 @@ export const Home = (props) => {
       className={`${classes.root}${className ? ` ${className}` : ""}`}
       {...otherProps}
     >
-      {error ? <div>{error}</div> : null}
+      {error ? <ErrorMessage>{error}</ErrorMessage> : null}
       {pending ? (
         <FullPageLayout>
           <Loading />
