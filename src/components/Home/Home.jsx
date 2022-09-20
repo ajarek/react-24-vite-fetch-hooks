@@ -9,7 +9,7 @@ import classes from "./styles.module.css"
 export const Home = (props) => {
   const { className, ...otherProps } = props
 
-  // npx json-server --watch src/assets/data/data.json --port 8000
+  
 
   const {
     data: blogs,

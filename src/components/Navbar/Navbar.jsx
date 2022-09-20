@@ -20,12 +20,12 @@ export const Navbar = (props) => {
       </h1>
       <WrapperLayout>
       <Link
-      link={'#'}
+      link={'/'}
       >
       Home
       </Link>
       <Link
-      link={'#'}
+      link={'/create'}
       >
       New Blog
       </Link>
