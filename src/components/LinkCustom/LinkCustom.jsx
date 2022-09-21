@@ -1,6 +1,6 @@
 import classes from './styles.module.css'
 
-export const Link = (props) => {
+export const LinkCustom = (props) => {
   const {
     className,
     children,
@@ -23,4 +23,4 @@ export const Link = (props) => {
     </div>
   )
 }
-export default Link
+export default LinkCustom

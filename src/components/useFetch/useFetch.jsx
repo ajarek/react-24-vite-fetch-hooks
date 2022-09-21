@@ -5,8 +5,9 @@ export const useFetch = (url) => {
   const [pending, setPending] = useState(true)
   const [error, setError] = useState(null)
   useEffect(() => {
+   const abortCont = new AbortController()
     setTimeout(()=>{
-       fetch(url)
+       fetch(url,{signal:abortCont.signal})
        .then(res=>{
         if (!res.ok) {
           throw new Error(
@@ -26,6 +27,7 @@ export const useFetch = (url) => {
       })
     
     },1000)
+    return ()=>abortCont.abort()
   },[url])
   return {data, pending, error}
 }

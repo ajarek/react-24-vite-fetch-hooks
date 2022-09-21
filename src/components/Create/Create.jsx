@@ -25,7 +25,32 @@ export const Create = (props) => {
           <Loading />
         </FullPageLayout>
       ) : null}
-       <h2>Add a New Blog</h2>
+       <h2 className={classes.title}>Add a New Blog</h2>
+       <form className={classes.form} >
+        <label htmlFor="">Blog title</label>
+        <input
+         type="text" 
+         required
+         />
+
+         <label htmlFor="">Blog body</label>
+        <textarea
+         type="text" 
+         required>
+         </textarea>
+
+         <label htmlFor="">Blog author</label>
+         <input
+         type="text" 
+         required
+         />
+         <label htmlFor="">Blog image</label>
+         <input
+         type="text" 
+         />
+         <button>Add Blog</button>
+         
+       </form>
     </div>
   )
 }

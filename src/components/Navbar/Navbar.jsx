@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from '../Link/Link/'
+import { LinkCustom } from '../LinkCustom/LinkCustom/'
 import { WrapperLayout } from '../WrapperLayout/WrapperLayout/'
 import classes from './styles.module.css'
 
@@ -19,16 +19,18 @@ export const Navbar = (props) => {
       >The Political Blog
       </h1>
       <WrapperLayout>
-      <Link
+      <LinkCustom
+      className={classes.linkCustom}
       link={'/'}
       >
       Home
-      </Link>
-      <Link
+      </LinkCustom>
+      <LinkCustom
+      className={classes.linkCustom}
       link={'/create'}
       >
       New Blog
-      </Link>
+      </LinkCustom>
       </WrapperLayout>
 
     </div>
