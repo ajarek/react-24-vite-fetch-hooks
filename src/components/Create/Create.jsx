@@ -1,7 +1,5 @@
 import { React, useState } from "react"
 import{useHistory} from "react-router-dom"
-import { FullPageLayout } from "../FullPageLayout/FullPageLayout"
-import { Loading } from "../Loading/Loading/"
 import classes from "./styles.module.css"
 
 export const Create = (props) => {
@@ -26,8 +24,8 @@ fetch('http://localhost:8000/blogs/',{
   body:JSON.stringify(blog)
 }).then(()=>{
   setPending(false)
-  // history.go(-1)
-  history.push('/')
+   history.go(-1)
+  //  history.push('/')
 })
 }
 
