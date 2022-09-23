@@ -1,5 +1,5 @@
 import React from "react"
-import { useParams } from "react-router-dom"
+import { useParams,useHistory } from "react-router-dom"
 import { ErrorMessage } from "../../components/ErrorMessage/ErrorMessage"
 import classes from "./styles.module.css"
 import { useFetch } from "../../components/useFetch/useFetch"
@@ -9,11 +9,19 @@ import { Loading } from "../../components/Loading/Loading"
 export const BlogDetails = (props) => {
   const { className, ...otherProps } = props
   const { id } = useParams()
+  const history=useHistory()
   const {
     data: blog,
     pending,
     error,
   } = useFetch("http://localhost:8000/blogs/" + id)
+  const handleDelete=()=>{
+    fetch("http://localhost:8000/blogs/"+blog.id,{
+      method:'DELETE'
+    }).then(()=>{
+     history.go(-1)    
+    })
+  }
   return (
     <div
       className={`${classes.root}${className ? ` ${className}` : ""}`}
@@ -31,6 +39,11 @@ export const BlogDetails = (props) => {
           <p>Artykuł napisał: {blog.author}</p>
           <img className={classes.foto} src={blog.src} alt="" />
           <div className={classes.body}>{blog.body}</div>
+          <button
+          onClick={handleDelete}
+          >
+            delete
+          </button>
         </>
       )}
     </div>
