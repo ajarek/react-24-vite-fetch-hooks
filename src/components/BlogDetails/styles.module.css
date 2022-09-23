@@ -1,22 +1,22 @@
 .root {
-    width: 100%;
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 1rem;
-    border: 3px dashed  #ff1493;
-    border-radius: 12px;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1rem;
+  border: 3px dashed #ff1493;
+  border-radius: 12px;
 }
-.title{
-    color:#ff1493 ;
+.title {
+  color: #ff1493;
 }
-.foto{
-    max-width: 300px;
-    margin-top: 1rem;
+.foto {
+  max-width: 300px;
+  margin-top: 1rem;
 }
-.body{
-    margin-top: 1rem;
-    line-height: 25px;
+.body {
+  margin-top: 1rem;
+  line-height: 25px;
 }

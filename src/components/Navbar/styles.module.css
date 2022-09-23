@@ -10,8 +10,8 @@
 .title {
   color: #ff1493;
 }
-.linkCustom:hover{ 
-   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
+.linkCustom:hover {
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
 }
 @media (max-width: 800px) {
   .root {

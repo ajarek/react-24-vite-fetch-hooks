@@ -12,17 +12,17 @@ export const ListBlog = (props) => {
 
   return (
     <>
- {blogs && blogs.map((blog)=>
-     (
-     <div  className={`${classes.root}${className ? ` ${className}` : ''}`}
-      key={blog.id}
-      {...otherProps}
-     >
-      <LinkCustom link={`/blogs/${blog.id}`}>
-     <p className={classes.title}> {blog.title}</p>
-     <p>Artykuł napisał: {blog.author}</p>
-     </LinkCustom>
-      </div>
+      {blogs && blogs.map((blog) =>
+      (
+        <div className={`${classes.root}${className ? ` ${className}` : ''}`}
+          key={blog.id}
+          {...otherProps}
+        >
+          <LinkCustom link={`/blogs/${blog.id}`}>
+            <p className={classes.title}> {blog.title}</p>
+            <p>Artykuł napisał: {blog.author}</p>
+          </LinkCustom>
+        </div>
       ))}
     </>
   )

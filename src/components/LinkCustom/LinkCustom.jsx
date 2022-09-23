@@ -1,16 +1,11 @@
-import classes from './styles.module.css'
+import classes from "./styles.module.css"
 
 export const LinkCustom = (props) => {
-  const {
-    className,
-    children,
-    link,
-    ...otherProps
-  } = props
+  const { className, children, link, ...otherProps } = props
 
   return (
     <div
-      className={`${classes.root}${className ? ` ${className}` : ''}`}
+      className={`${classes.root}${className ? ` ${className}` : ""}`}
       {...otherProps}
     >
       <a
@@ -19,7 +14,6 @@ export const LinkCustom = (props) => {
       >
         {children}
       </a>
-
     </div>
   )
 }

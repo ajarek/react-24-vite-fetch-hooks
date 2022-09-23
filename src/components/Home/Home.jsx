@@ -9,8 +9,6 @@ import classes from "./styles.module.css"
 export const Home = (props) => {
   const { className, ...otherProps } = props
 
-  
-
   const {
     data: blogs,
     pending,
